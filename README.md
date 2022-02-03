@@ -5,27 +5,15 @@
 <h4 align="center"> 
 :construction: 🚀 Aplicação em construção :construction:
 </h4>
-<!-- <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/tgmarinho/be-the-hero?color=%2304D361">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/tgmarinho/be-the-hero">
-	
-  <a href="https://www.linkedin.com/in/tgmarinho/">
-    <img alt="Made by Thiago Marinho" src="https://img.shields.io/badge/made%20by-tgmarinho-%2304D361">
-  </a>
-
-  <a href="https://github.com/tgmarinho/be-the-hero/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tgmarinho/be-the-hero">
-  </a>
-
-  <a href="https://github.com/tgmarinho/be-the-hero/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/tgmarinho/be-the-hero">
-  </a>
-<a aria-label="Completed" href="https://rocketseat.com.br/week-10/aulas#4">
-    <img src="https://img.shields.io/badge/OmniStack-done-green?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg=="></img>
-  </a>
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-</p> -->
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+  <img alt="GitHub language count" src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white">
+  <img alt="GitHub language count" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white">
+  <img alt="GitHub language count" src="https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=whitee">
+  <img alt="GitHub language count" src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white">
+  
+  
+</p>
 <!-- <p align="center">
   <a href="https://insomnia.rest/run/?label=be-the-hero&uri=https%3A%2F%2Fraw.githubusercontent.com%tgmarinho%2Fbe-the-hero%2Fmaster%2FInsomnia_2020-03-24.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a> -->
 </p>
