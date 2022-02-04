@@ -1,0 +1,136 @@
+/* post_component */
+.post_component {
+    width: 100%;
+    border-radius: 8px;
+    background: var(--white);
+    margin: 1rem 0;
+}
+
+.post_component_main {
+    padding: 2rem;
+}
+
+.post_component_header_info {
+    margin-left: 1rem;
+    width: 200px;
+    overflow: hidden;
+}
+
+.post_component_header_info h2 {
+    font-size: 20px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.post_component_header_info span {
+    font-size: 14px;
+    color: var(--grey-font);
+    white-space: nowrap;
+}
+
+/* post_component_content */
+.post_component_content {
+    height: 160px;
+    overflow: auto;
+    text-align: justify;
+}
+
+/* post_component_see */
+.post_component_see {
+    padding: 0 2rem;
+}
+
+.post_component_see span {
+    color: var(--purple-first);
+    cursor: pointer;
+}
+
+.post_component_see span svg {
+    font-size: 28px;
+}
+
+/* Slider */
+.post_component_slider {
+    overflow: hidden;
+}
+
+.post_component_slider .control_image{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_component_slider .control_image img{
+    animation: left .5s;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.post_component_slider_controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: .3rem;
+}
+
+.post_component_slider_controls svg{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.post_component_slider_controls svg:hover{
+    transform: scale(1.1);
+}
+
+.post_component_footer {
+    height: 120px;
+    padding: 0 2rem;
+    background: var(--white-second);
+}
+
+.price_cost span {
+    color: var(--grey-font-second);
+}
+
+.price_cost p {
+    color: var(--purple-first);
+    font-weight: bold;
+    margin: 0;
+}
+
+.post_component_access {
+    color: var(--white);
+    background: var(--green);
+    width: 200px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.post_component_access:hover {
+    color: var(--white);
+    transform: scale(1.012);
+}
+
+@media (max-width: 700px) {
+    .post_component_footer {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .price_cost {
+        width: 100%;
+    }
+
+    .post_component_access {
+        width: 100%;
+    }
+}

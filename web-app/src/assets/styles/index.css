@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --purple-first: #8257E5;
+    --purple-second: #9871F5;
+
+    --green: #04D361;
+
+    --white: #fff;
+    --white-first: #F0F0F7;
+    --white-second: #FAFAFC;
+
+    --grey-first: #E6E6F0;
+    --grey-font: #6A6180;
+    --grey-font-second: #9C98A6;
+    --grey-sub-font: #D4C2FF;
+    --grey-sub-font-bold: #A0A0B2;
+
+    --black-title: #32264D;
+    --red: #E02041;
+}
+
+@keyframes animate-div {
+    from {
+        opacity: 0;
+        margin-top: -150px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    from {
+        opacity: 0;
+        transform: translateY(-1.2rem);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes left {
+    from {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--white-first);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+h1, h2, h3{
+    color: var(--black-title);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input, button, select {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.promotion_name{
+    color: var(--grey-font);
+}
