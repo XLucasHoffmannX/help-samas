@@ -38,6 +38,16 @@
     text-align: justify;
 }
 
+/* post_component_header_date */
+.post_component_header_date{
+    font-size: 14px;
+}
+
+.post_component_header_date svg{
+    font-size: 24px;
+    margin-right: .5rem;
+}
+
 /* post_component_see */
 .post_component_see {
     padding: 0 2rem;
