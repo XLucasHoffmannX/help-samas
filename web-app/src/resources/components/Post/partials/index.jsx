@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {BsArrowLeftShort, BsArrowRightShort} from 'react-icons/bs'
+import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs'
 
 export const Slider = () => {
     const slides = [
@@ -7,6 +7,7 @@ export const Slider = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqUZxXgJxbEvS_d6tgA7tP8rbxNJ1ehl1KPA&usqp=CAU",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr8EqU8C0UOgdzC_6KIccR2O_j27T9EAeuOg&usqp=CAU"
     ];
+    const [loader, setLoader] = useState(true);
     const [current, setCurrent] = useState(0);
     const length = slides.length;
 

@@ -36,11 +36,13 @@
     height: 160px;
     overflow: auto;
     text-align: justify;
+    color: var(--grey-font);
 }
 
 /* post_component_header_date */
 .post_component_header_date{
     font-size: 14px;
+    color: var(--black-title);
 }
 
 .post_component_header_date svg{

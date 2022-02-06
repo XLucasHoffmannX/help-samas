@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
 import { Context } from '../../../contexts/state';
 import BackgroundLanding from '../../../assets/images/background-landing.svg';
@@ -10,15 +10,22 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 
 import './landing.css';
 import Post from '../../components/Post';
+import AuthModal from '../../components/Modals/AuthModal';
 
 export default function Landing() {
   const state = useContext(Context);
   console.log(state)
+
+  const [authModal, setAuthModal] = useState(false);
+
   let viewsCases = useRef()
   const scrollTo = () => window.scrollTo({ behavior: 'smooth', top: viewsCases.current.offsetTop });
 
+  const handleAuthModal = ()=> authModal ? setAuthModal(false) : setAuthModal(true); 
+
   return (
     <>
+      { authModal ? <AuthModal open={authModal} close={setAuthModal} /> : null }
       <div className='content_landing vh-100 d-flex flex-column justify-content-around align-items-center'>
         <div className=''></div>
         <div className='content_control w-100 d-flex justify-content-around'>
@@ -29,7 +36,7 @@ export default function Landing() {
               de ajudar a si mesmo.
             </span>
             <div className='content_box_auth_btns w-100 d-flex flex-column align-items-center mt-4'>
-              <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/">
+              <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/" onClick={handleAuthModal}>
                 Login
               </Link>
               <Link className='box_register mt-4 w-100 d-flex align-items-center justify-content-center' to="/">

@@ -27,11 +27,11 @@ export default function Post() {
                 <div className='post_component_content w-100 mt-4'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget dolor vitae ligula consequat porttitor. Morbi eu ligula tortor. Vestibulum pulvinar feugiat lacus, eu dapibus nisi bibendum sed. Integer ac fringilla tortor. Phasellus ipsum diam, tempus sit amet urna sit amet, condimentum imperdiet enim. Proin mattis luctus nisl, sodales iaculis lorem mollis ut. Duis sit amet arcu porta, suscipit est eget, dictum metus. Aliquam congue sollicitudin maximus. Vestibulum volutpat tristique ligula, quis consectetur nunc consequat in. Curabitur ac ligula posuere, efficitur lorem pulvinar, pretium nisi.
                 </div>
-                <div className='post_component_header_date w-100 mt-3 d-flex align-items-center'>
+                <div className='post_component_header_date w-100 mt-4 d-flex align-items-center'>
                     <AiOutlineFieldTime /> Última quarta-feira ás 14:00
                 </div>
             </div>
-            <div class="post_component_see">
+            <div className="post_component_see">
                 <span onClick={handleSlider}>Ver fotos <RiArrowDropDownLine /></span>
                 {slider && <Slider />}
             </div>
