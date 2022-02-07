@@ -9,6 +9,11 @@ import { FooterForm } from '../../Forms';
 
 export default function AuthModal({ open, close }) {
     const handleClose = () => close(false);
+
+    const handleAuthSubmit = ()=>{
+        console.log('Ação de login');
+    }
+
     return (
         <>
             <div>
@@ -42,7 +47,7 @@ export default function AuthModal({ open, close }) {
                                     </div>
                                 </form>
                             </div>
-                            <FooterForm />
+                            <FooterForm name='Entrar' handleSubmit={handleAuthSubmit}/>
                         </Box>
                     </Fade>
                 </Modal>

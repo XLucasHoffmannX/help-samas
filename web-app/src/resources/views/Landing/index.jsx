@@ -39,7 +39,7 @@ export default function Landing() {
               <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/" onClick={handleAuthModal}>
                 Login
               </Link>
-              <Link className='box_register mt-4 w-100 d-flex align-items-center justify-content-center' to="/">
+              <Link className='box_register mt-4 w-100 d-flex align-items-center justify-content-center' to="/register">
                 Cadastro
               </Link>
             </div>

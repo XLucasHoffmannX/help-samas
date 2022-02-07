@@ -1,0 +1,38 @@
+/* Page component */
+.page_component{
+    height: 370px;
+    background: var(--purple-first);
+}
+
+.page_component_logo{
+    padding: 16px 20px;
+}
+
+.page_component_logo img{
+    width: 55px;
+}
+
+.page_component_title{
+    width: min(740px, 90%);
+}
+
+.page_component_title h1{
+    color: var(--white);
+    font-size: 26px;
+}
+
+.page_component_title p{
+    color: var(--grey-sub-font);
+    width: 300px;
+}
+
+/* page_component_landing_overlaid */
+.page_component_overlaid{
+    margin-top: -50px;
+    width: min(740px, 90%);
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: left .5s;
+}

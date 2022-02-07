@@ -96,7 +96,7 @@ ul, ol {
     list-style: none;
 }
 
-input, button, select {
+input, button, select, textarea {
     border: none;
     outline: none;
 }
