@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState, lazy, Suspense } from 'react';
 
 import { Context } from '../../../contexts/state';
 import BackgroundLanding from '../../../assets/images/background-landing.svg';
@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
+import { CircularProgress } from '@material-ui/core';
+
 import './landing.css';
-import Post from '../../components/Post';
+/* import Post from '../../components/Post'; */
 import AuthModal from '../../components/Modals/AuthModal';
+const Post = lazy(() => import("../../components/Post"));
 
 export default function Landing() {
   const state = useContext(Context);
@@ -21,11 +24,11 @@ export default function Landing() {
   let viewsCases = useRef()
   const scrollTo = () => window.scrollTo({ behavior: 'smooth', top: viewsCases.current.offsetTop });
 
-  const handleAuthModal = ()=> authModal ? setAuthModal(false) : setAuthModal(true); 
+  const handleAuthModal = () => authModal ? setAuthModal(false) : setAuthModal(true);
 
   return (
     <>
-      { authModal ? <AuthModal open={authModal} close={setAuthModal} /> : null }
+      {authModal ? <AuthModal open={authModal} close={setAuthModal} /> : null}
       <div className='content_landing vh-100 d-flex flex-column justify-content-around align-items-center'>
         <div className=''></div>
         <div className='content_control w-100 d-flex justify-content-around'>
@@ -67,15 +70,17 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <div className='page_component_landing_overlaid h-100'>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((post, index) => (
-            <Post key={index}/>
-          ))}
-          <div className='promotion_name d-flex align-items-center flex-column m-2'>
-            <img src={LogoPurple} width="55"/>
-            <span className='mb-4 mt-2'>Todos os direitos reservados © 2022</span>
+        <Suspense fallback={<div><div className="vh-100 d-flex justify-content-center align-items-center"><CircularProgress /></div></div>}>
+          <div className='page_component_landing_overlaid h-100'>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((post, index) => (
+                <Post key={index} />
+            ))}
+            <div className='promotion_name d-flex align-items-center flex-column m-2'>
+              <img src={LogoPurple} width="55" />
+              <span className='mb-4 mt-2'>Todos os direitos reservados © 2022</span>
+            </div>
           </div>
-        </div>
+        </Suspense>
       </div>
     </>
   );

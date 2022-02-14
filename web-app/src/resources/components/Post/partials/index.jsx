@@ -33,7 +33,7 @@ export const Slider = () => {
                         key={index}
                     >
                         {index === current && (
-                            <img src={slide} alt='travel image' className='image' />
+                            <img src={slide} alt='travel image' className='image'/>
                         )}
                     </div>
                 );

@@ -4,6 +4,7 @@
     border-radius: 8px;
     background: var(--white);
     margin: 1rem 0;
+    animation: left .5s;
 }
 
 .post_component_main {

@@ -66,6 +66,7 @@ export default function Register() {
       description='O primeiro passo, é preencher esse
       formulário com seus dados.'
       children={register}
+      promotion={true}
     />
   );
 }

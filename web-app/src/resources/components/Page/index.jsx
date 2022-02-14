@@ -6,7 +6,7 @@ import Logo from '../../../assets/images/logo.svg'
 import LogoPurple from '../../../assets/images/logo_purple.svg'
 import { Link } from 'react-router-dom';
 
-export default function Page({ children, title, description }) {
+export default function Page({ children, title, description, promotion }) {
     return (
         <>
             <div className='vh-100 vw-100 d-flex flex-column align-items-center '>
@@ -25,10 +25,12 @@ export default function Page({ children, title, description }) {
                 </div>
                 <div className='page_component_overlaid '>
                     {children}
-                    <div className='promotion_name d-flex align-items-center flex-column m-2 mt-4'>
-                        <img src={LogoPurple} width="55" />
-                        <span className='mb-2 mt-2'>Todos os direitos reservados © 2022</span>
-                    </div>
+                    {promotion &&
+                        <div className='promotion_name d-flex align-items-center flex-column m-2 mt-4'>
+                            <img src={LogoPurple} width="55" />
+                            <span className='mb-2 mt-2'>Todos os direitos reservados © 2022</span>
+                        </div>
+                    }
                 </div>
             </div>
         </>

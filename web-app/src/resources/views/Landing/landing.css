@@ -7,6 +7,7 @@
 /* content_box_auth */
 .content_box_auth{
     width: 400px;
+    animation: up .5s;
 }
 
 .content_box_auth_sub_title{
@@ -45,6 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: left .5s;
 }
 
 /* Landing Cases */
