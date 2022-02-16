@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Traits\UuidTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use SoftDeletes, UuidTrait, HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,17 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'user_name',
         'email',
         'password',
-        'link_url',
-        'number_whatsapp',
-        'bio',
-        'dateTime',
-        'district',
     ];
-
-    protected $keyType = 'string';
 
     /**
      * The attributes that should be hidden for serialization.
