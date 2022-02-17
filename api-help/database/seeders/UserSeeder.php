@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use Faker\Generator as Faker;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        
+        // SECTION create one user
         \App\Models\User::factory(1)->create([
             'name' => $faker->name,
             'user_name' => $faker->unique()->userName(),

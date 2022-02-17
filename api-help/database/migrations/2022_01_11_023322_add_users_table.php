@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
-class AddDataUser extends Migration
+class AddUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +17,9 @@ class AddDataUser extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('uuid')->default(Str::uuid()->toString());
             $table->string('user_name')->unique();
-            $table->string('link_url_image');
+            $table->string('link_url_image')->nullable();
             $table->string('number_whatsapp');
-            $table->longText('bio');
+            $table->longText('bio')->nullable();
             $table->string('date_begin');
             $table->string('district');
 
