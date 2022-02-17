@@ -1,6 +1,5 @@
 import React, { useContext, useRef, useState, lazy, Suspense } from 'react';
 
-import { Context } from '../../../contexts/state';
 import BackgroundLanding from '../../../assets/images/background-landing.svg';
 import Logo from '../../../assets/images/logo.svg';
 import LogoPurple from '../../../assets/images/logo_purple.svg';
@@ -16,12 +15,9 @@ import AuthModal from '../../components/Modals/AuthModal';
 const Post = lazy(() => import("../../components/Post"));
 
 export default function Landing() {
-  const state = useContext(Context);
-  console.log(state)
-
   const [authModal, setAuthModal] = useState(false);
 
-  let viewsCases = useRef()
+  let viewsCases = useRef();
   const scrollTo = () => window.scrollTo({ behavior: 'smooth', top: viewsCases.current.offsetTop });
 
   const handleAuthModal = () => authModal ? setAuthModal(false) : setAuthModal(true);
