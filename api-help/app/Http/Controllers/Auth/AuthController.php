@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Client\HttpClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     public function store(Request $request){
-        /* Validator */
+        // SECTION validator
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'user_name' => 'required|string|max:255|unique:users',
@@ -25,7 +26,7 @@ class AuthController extends Controller
             'district' => 'required|string|max:255',
         ]);
 
-        if($validator->fails()) return response()->json([ 'errors' => $validator->errors() ], 400);
+        if($validator->fails()) return response()->json([ 'error' => $validator->errors() ], 401);
 
         $user = new User;
 
@@ -45,6 +46,7 @@ class AuthController extends Controller
         // SECTION save data user
         $user->save();
 
+        // SECTION auth-api
         if($user->id){
             return response()->json([
                 'access_token' => $user->createToken('auth-api')->accessToken
@@ -53,6 +55,6 @@ class AuthController extends Controller
 
         return response()->json([
             'error' => 'Erro ao cadastrar usuário!'
-        ]);
+        ], 401);
     }
 }
