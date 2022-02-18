@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import { Home, HomeOptions } from './partials/index';
 // style
 import './page.css';
 import Logo from '../../../assets/images/logo.svg'
 import LogoPurple from '../../../assets/images/logo_purple.svg'
-import { Link } from 'react-router-dom';
 
-export default function Page({ children, title, description, promotion }) {
+export default function Page({ children, title, description, promotion, home }) {
     return (
         <>
             <div className='vh-100 vw-100 d-flex flex-column align-items-center '>
@@ -17,13 +17,25 @@ export default function Page({ children, title, description, promotion }) {
                                 <img src={Logo} />
                             </Link>
                         </div>
-                        <div className='page_component_title mb-5' >
-                            <h1 className='my-4'>{title}</h1>
-                            <p>{description}</p>
-                        </div>
+                        {
+                            home ?
+                                <HomeOptions description={description} />
+                                :
+                                <Home title={title} description={description} />
+                        }
                     </div>
                 </div>
-                <div className='page_component_overlaid '>
+                {
+                    home ?
+                        <form className='formBox d-flex mb-3' action="" style={{ marginTop: '-20px', width: 'min(740px, 90%)' }}>
+                            <div className='formBox_control' style={{ margin: '0', padding: '0' }}>
+                                <input type="text" className='formBox_input' placeholder='Buscar por caso...' />
+                            </div>
+                        </form>
+                        :
+                        null
+                }
+                <div className='page_component_overlaid'>
                     {children}
                     {promotion &&
                         <div className='promotion_name d-flex align-items-center flex-column m-2 mt-4'>

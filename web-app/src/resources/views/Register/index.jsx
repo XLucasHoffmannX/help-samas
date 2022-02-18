@@ -11,7 +11,7 @@ export default function Register() {
   }
 
   const register = (
-    <div className='formContainer d-flex flex-column justify-content-center align-items-center'>
+    <div className='formContainer d-flex flex-column justify-content-center align-items-center' style={{marginTop: '-50px'}}>
       <form className='formBox limit' action="">
         <div className='formBox_header mt-4'>
           <h2>Seus dados</h2>
@@ -67,6 +67,7 @@ export default function Register() {
       formulário com seus dados.'
       children={register}
       promotion={true}
+      home={false}
     />
   );
 }

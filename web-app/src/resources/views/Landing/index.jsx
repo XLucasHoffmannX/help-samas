@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState, lazy, Suspense } from 'react';
+import React, { useRef, useState, lazy, Suspense } from 'react';
 
 import BackgroundLanding from '../../../assets/images/background-landing.svg';
 import Logo from '../../../assets/images/logo.svg';
@@ -8,6 +8,7 @@ import { FaHeart } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
 import { CircularProgress } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './landing.css';
 /* import Post from '../../components/Post'; */
@@ -15,6 +16,9 @@ import AuthModal from '../../components/Modals/AuthModal';
 const Post = lazy(() => import("../../components/Post"));
 
 export default function Landing() {
+  const dispatch = useDispatch();
+  const { logged } = useSelector(state => state.authReducer);
+
   const [authModal, setAuthModal] = useState(false);
 
   let viewsCases = useRef();
@@ -35,9 +39,16 @@ export default function Landing() {
               de ajudar a si mesmo.
             </span>
             <div className='content_box_auth_btns w-100 d-flex flex-column align-items-center mt-4'>
-              <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/" onClick={handleAuthModal}>
-                Login
-              </Link>
+              {
+                logged ?
+                  <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/home">
+                    Ver casos
+                  </Link>
+                  :
+                  <Link className='box_login w-100 d-flex align-items-center justify-content-center' to="/" onClick={handleAuthModal}>
+                    Login
+                  </Link>
+              }
               <Link className='box_register mt-4 w-100 d-flex align-items-center justify-content-center' to="/register">
                 Cadastro
               </Link>
@@ -69,7 +80,7 @@ export default function Landing() {
         <Suspense fallback={<div><div className="vh-100 d-flex justify-content-center align-items-center"><CircularProgress /></div></div>}>
           <div className='page_component_landing_overlaid h-100'>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((post, index) => (
-                <Post key={index} />
+              <Post key={index} />
             ))}
             <div className='promotion_name d-flex align-items-center flex-column m-2'>
               <img src={LogoPurple} width="55" />

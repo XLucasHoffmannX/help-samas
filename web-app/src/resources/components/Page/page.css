@@ -12,8 +12,21 @@
     width: 55px;
 }
 
-.page_component_title{
+.page_component_title, .page_component_home_opt{
     width: min(740px, 90%);
+}
+
+.page_component_home_opt_header img{
+    width: 133px;
+}
+
+.page_component_home_opt_btns img{
+    width: 60px;
+    cursor: pointer;
+}
+
+.page_component_home_opt_btns img:hover{
+    transform: scale(1.015);
 }
 
 .page_component_title h1{
@@ -28,7 +41,6 @@
 
 /* page_component_landing_overlaid */
 .page_component_overlaid{
-    margin-top: -50px;
     width: min(740px, 90%);
 
     display: flex;
