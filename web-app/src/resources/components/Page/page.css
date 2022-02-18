@@ -48,3 +48,15 @@
     flex-wrap: wrap;
     animation: left .5s;
 }
+
+@media (max-width: 700px) {
+    .page_component_home_opt_header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page_component_home_opt_btns{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

@@ -15,9 +15,11 @@ export const HomeOptions = ({ description }) => {
     return (
         <div className="page_component_home_opt mt-1 py-1">
             <div className="page_component_home_opt_header d-flex align-items-center justify-content-between">
-                <Link to="/">
-                    <img src={Logo} />
-                </Link>
+                <div className='page_component_home_opt_header_link'>
+                    <Link to="/">
+                        <img src={Logo} />
+                    </Link>
+                </div>
                 <div className='page_component_home_opt_btns d-flex align-items-center'>
                     <div className='formBox_footer_btn' >
                         <Link to="/create">
