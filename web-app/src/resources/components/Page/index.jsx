@@ -36,7 +36,7 @@ export default function Page({ children, title, description, promotion, home }) 
                         null
                 }
                 <div className='page_component_overlaid'>
-                    {children}
+                    {children && children}
                     {promotion &&
                         <div className='promotion_name d-flex align-items-center flex-column m-2 mt-4'>
                             <img src={LogoPurple} width="55" />

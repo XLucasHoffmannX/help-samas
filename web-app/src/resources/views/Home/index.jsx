@@ -12,7 +12,7 @@ export default function Home() {
 
   const home = (
     <Suspense fallback={<div><div className="vh-100 d-flex justify-content-center align-items-center"><CircularProgress /></div></div>}>
-      <div className='page_component_landing_overlaid'>
+      <div >
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((post, index) => (
           <Post key={index} />
         ))}
