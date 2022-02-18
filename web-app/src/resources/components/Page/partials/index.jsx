@@ -20,7 +20,7 @@ export const HomeOptions = ({ description }) => {
                 </Link>
                 <div className='page_component_home_opt_btns d-flex align-items-center'>
                     <div className='formBox_footer_btn' >
-                        <Link to="#">
+                        <Link to="/create">
                             Criar Post
                         </Link>
                     </div>

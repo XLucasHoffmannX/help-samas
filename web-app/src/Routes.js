@@ -10,6 +10,7 @@ import { userHelper } from './store/helpers/user.helper';
 const Landing = lazy(() => import('./resources/views/Landing/'));
 const Register = lazy(() => import('./resources/views/Register'));
 const Home = lazy(() => import('./resources/views/Home'));
+const CreatePost = lazy(() => import('./resources/views/CreatePost'));
 
 export default function Routes() {
     const dispatch = useDispatch();
@@ -28,6 +29,8 @@ export default function Routes() {
                     <Route exact path="/register" component={Register} />
 
                     <Route exact path="/home" component={logged ? Home : Landing} />
+                    
+                    <Route exact path="/create" component={logged ? CreatePost : Landing} />
 
                     <Route path="*" exact component={NotFound} />
                 </Switch>
