@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserCreateRequest;
 use App\Models\User;
 use Illuminate\Http\Client\HttpClientException;
 use Illuminate\Http\Request;
@@ -11,40 +12,19 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function store(Request $request){
-        // SECTION validator
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'user_name' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:6',
-
-            'link_url_image' => 'string|max:255',
-            'number_whatsapp' => 'required|min:10',
-            'bio' => 'string',
-            'date_begin' => 'required|string|min:4',
-            'district' => 'required|string|max:255',
-        ]);
-
-        if($validator->fails()) return response()->json([ 'error' => $validator->errors() ], 401);
-
+    public function store(UserCreateRequest $request){
         $user = new User;
 
-        // SECTION data user
-        $user->name = $request->name;
-        $user->user_name = $request->user_name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-
-        // SECTION aditional data user
-        $user->link_url_image = $request->link_url_image;
-        $user->number_whatsapp = $request->number_whatsapp;
-        $user->bio = $request->bio;
-        $user->date_begin = $request->date_begin;
-        $user->district = $request->district;
-        
-        // SECTION save data user
-        $user->save();
+        $user = $user->create($request->only(
+            'name',
+            'user_name',
+            'email',
+            'link_url_image',
+            'number_whatsapp',
+            'bio',
+            'date_begin',
+            'district'
+        ) + ["password" => Hash::make($request->password)]);
 
         // SECTION auth-api
         if($user->id){
