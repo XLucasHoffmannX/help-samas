@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 export const Http = axios.create({
-    baseURL: process.env.REACT_APP_URL_ROOT
+    baseURL: process.env.REACT_APP_URL_ROOT,
+    accept : "application/json"
 })
 
 export const HttpAuth = axios.create({
