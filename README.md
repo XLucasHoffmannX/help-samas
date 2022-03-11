@@ -60,9 +60,9 @@ After merging your receipt request to done, you can delete a branch from yours.
 Área de deploy com linkls da aplicação
 
 Seguem os links:
-- [API Backend](https://be-the-super-hero.herokuapp.com/ongs)
-- [Frontend](https://be-the-super-hero.netlify.com/)
-- [Código](https://github.com/tgmarinho/be-the-hero)
+- [API Backend](https://)
+- [Frontend](https://)
+- [Código](https://)
 
 #api #laravel #backend #frontend #react #redux #mui #bootstrap #appdeveloper #heroku #netlify #developer
 
